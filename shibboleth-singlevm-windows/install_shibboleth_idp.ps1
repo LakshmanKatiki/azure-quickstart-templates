@@ -87,43 +87,43 @@ $client.DownloadFile($source,$destination)
 
 # Download and install Shibboleth IDP
 echo "Downloading Shibboleth..."
-$source = "https://shibboleth.net/downloads/identity-provider/latest/shibboleth-identity-provider-3.3.2.zip"
-$destination = "C:\Temp\shibboleth-identity-provider-3.3.2.zip"
+$source = "https://shibboleth.net/downloads/identity-provider/latest/shibboleth-identity-provider-3.3.3.zip"
+$destination = "C:\Temp\shibboleth-identity-provider-3.3.3.zip"
 $client = new-object System.Net.WebClient 
 $client.DownloadFile($source,$destination)
 
 echo "Unzip shibboleth"
-Unzip "C:\Temp\shibboleth-identity-provider-3.3.2.zip" "C:\"
+Unzip "C:\Temp\shibboleth-identity-provider-3.3.3.zip" "C:\"
 
 echo "Generate preconfig file"
 $newLine= [System.Environment]::NewLine
-[IO.File]::AppendAllText("C:\shibboleth-identity-provider-3.3.2\bin\temp.properties","idp.additionalProperties= /conf/ldap.properties, /conf/saml-nameid.properties, /conf/services.properties, /conf/idp.properties" + $newLine)
-[IO.File]::AppendAllText("C:\shibboleth-identity-provider-3.3.2\bin\temp.properties","idp.sealer.storePassword= $SSLKEYPASSWORD"+ $newLine)
-[IO.File]::AppendAllText("C:\shibboleth-identity-provider-3.3.2\bin\temp.properties","idp.sealer.keyPassword= $SSLKEYPASSWORD" + $newLine)
-[IO.File]::AppendAllText("C:\shibboleth-identity-provider-3.3.2\bin\temp.properties","idp.signing.key= %{idp.home}/credentials/idp-signing.key" + $newLine)
-[IO.File]::AppendAllText("C:\shibboleth-identity-provider-3.3.2\bin\temp.properties","idp.signing.cert= %{idp.home}/credentials/idp-signing.crt" + $newLine)
-[IO.File]::AppendAllText("C:\shibboleth-identity-provider-3.3.2\bin\temp.properties","idp.encryption.key= %{idp.home}/credentials/idp-encryption.key" + $newLine)
-[IO.File]::AppendAllText("C:\shibboleth-identity-provider-3.3.2\bin\temp.properties","idp.encryption.cert= %{idp.home}/credentials/idp-encryption.crt" + $newLine)
-[IO.File]::AppendAllText("C:\shibboleth-identity-provider-3.3.2\bin\temp.properties","idp.entityID= https://$SITENAME/idp/shibboleth" + $newLine)
-[IO.File]::AppendAllText("C:\shibboleth-identity-provider-3.3.2\bin\temp.properties","idp.scope= $SITENAME" + $newLine)
-[IO.File]::AppendAllText("C:\shibboleth-identity-provider-3.3.2\bin\temp.properties","idp.consent.StorageService= shibboleth.JPAStorageService" + $newLine)
-[IO.File]::AppendAllText("C:\shibboleth-identity-provider-3.3.2\bin\temp.properties","idp.consent.userStorageKey= shibboleth.consent.AttributeConsentStorageKey" + $newLine)
-[IO.File]::AppendAllText("C:\shibboleth-identity-provider-3.3.2\bin\temp.properties","idp.consent.userStorageKeyAttribute= %{idp.persistentId.sourceAttribute}" + $newLine)
-[IO.File]::AppendAllText("C:\shibboleth-identity-provider-3.3.2\bin\temp.properties","idp.consent.allowGlobal= false" + $newLine)
-[IO.File]::AppendAllText("C:\shibboleth-identity-provider-3.3.2\bin\temp.properties","idp.consent.compareValues= true" + $newLine)
-[IO.File]::AppendAllText("C:\shibboleth-identity-provider-3.3.2\bin\temp.properties","idp.consent.maxStoredRecords= -1" + $newLine)
-[IO.File]::AppendAllText("C:\shibboleth-identity-provider-3.3.2\bin\temp.properties","idp.ui.fallbackLanguages= en,de,fr")
-echo "idp.sealer.password = $SSLKEYPASSWORD" >C:\shibboleth-identity-provider-3.3.2\credentials.properties
+[IO.File]::AppendAllText("C:\shibboleth-identity-provider-3.3.3\bin\temp.properties","idp.additionalProperties= /conf/ldap.properties, /conf/saml-nameid.properties, /conf/services.properties, /conf/idp.properties" + $newLine)
+[IO.File]::AppendAllText("C:\shibboleth-identity-provider-3.3.3\bin\temp.properties","idp.sealer.storePassword= $SSLKEYPASSWORD"+ $newLine)
+[IO.File]::AppendAllText("C:\shibboleth-identity-provider-3.3.3\bin\temp.properties","idp.sealer.keyPassword= $SSLKEYPASSWORD" + $newLine)
+[IO.File]::AppendAllText("C:\shibboleth-identity-provider-3.3.3\bin\temp.properties","idp.signing.key= %{idp.home}/credentials/idp-signing.key" + $newLine)
+[IO.File]::AppendAllText("C:\shibboleth-identity-provider-3.3.3\bin\temp.properties","idp.signing.cert= %{idp.home}/credentials/idp-signing.crt" + $newLine)
+[IO.File]::AppendAllText("C:\shibboleth-identity-provider-3.3.3\bin\temp.properties","idp.encryption.key= %{idp.home}/credentials/idp-encryption.key" + $newLine)
+[IO.File]::AppendAllText("C:\shibboleth-identity-provider-3.3.3\bin\temp.properties","idp.encryption.cert= %{idp.home}/credentials/idp-encryption.crt" + $newLine)
+[IO.File]::AppendAllText("C:\shibboleth-identity-provider-3.3.3\bin\temp.properties","idp.entityID= https://$SITENAME/idp/shibboleth" + $newLine)
+[IO.File]::AppendAllText("C:\shibboleth-identity-provider-3.3.3\bin\temp.properties","idp.scope= $SITENAME" + $newLine)
+[IO.File]::AppendAllText("C:\shibboleth-identity-provider-3.3.3\bin\temp.properties","idp.consent.StorageService= shibboleth.JPAStorageService" + $newLine)
+[IO.File]::AppendAllText("C:\shibboleth-identity-provider-3.3.3\bin\temp.properties","idp.consent.userStorageKey= shibboleth.consent.AttributeConsentStorageKey" + $newLine)
+[IO.File]::AppendAllText("C:\shibboleth-identity-provider-3.3.3\bin\temp.properties","idp.consent.userStorageKeyAttribute= %{idp.persistentId.sourceAttribute}" + $newLine)
+[IO.File]::AppendAllText("C:\shibboleth-identity-provider-3.3.3\bin\temp.properties","idp.consent.allowGlobal= false" + $newLine)
+[IO.File]::AppendAllText("C:\shibboleth-identity-provider-3.3.3\bin\temp.properties","idp.consent.compareValues= true" + $newLine)
+[IO.File]::AppendAllText("C:\shibboleth-identity-provider-3.3.3\bin\temp.properties","idp.consent.maxStoredRecords= -1" + $newLine)
+[IO.File]::AppendAllText("C:\shibboleth-identity-provider-3.3.3\bin\temp.properties","idp.ui.fallbackLanguages= en,de,fr")
+echo "idp.sealer.password = $SSLKEYPASSWORD" >C:\shibboleth-identity-provider-3.3.3\credentials.properties
 
 echo "Running the shibboleth installer..."
-$filedata = [IO.File]::ReadAllText("C:\shibboleth-identity-provider-3.3.2\bin\install.bat")
-Rename-Item C:\shibboleth-identity-provider-3.3.2\bin\install.bat C:\shibboleth-identity-provider-3.3.2\bin\install-old.bat
+$filedata = [IO.File]::ReadAllText("C:\shibboleth-identity-provider-3.3.3\bin\install.bat")
+Rename-Item C:\shibboleth-identity-provider-3.3.3\bin\install.bat C:\shibboleth-identity-provider-3.3.3\bin\install-old.bat
 $OriginalString="setlocal"
 $ReplceString="setlocal`r`nset JAVA_HOME=C:\Program Files\Java\jdk-10.0.1"
 $filedata=$filedata.Replace($OriginalString,$ReplceString)
-[IO.File]::WriteAllText("C:\shibboleth-identity-provider-3.3.2\bin\install.bat", $filedata.TrimEnd())
+[IO.File]::WriteAllText("C:\shibboleth-identity-provider-3.3.3\bin\install.bat", $filedata.TrimEnd())
 
-cmd.exe /C "C:\shibboleth-identity-provider-3.3.2\bin\install.bat -Didp.src.dir=C:\shibboleth-identity-provider-3.3.2 -Didp.target.dir=C:\opt\shibboleth-idp\ -Didp.merge.properties=C:\shibboleth-identity-provider-3.3.2\bin\temp.properties -Didp.sealer.password=$SSLKEYPASSWORD -Didp.keystore.password=$SSLKEYPASSWORD -Didp.conf.filemode=644 -Didp.host.name=$SITENAME -Didp.scope=$SITENAME"
+cmd.exe /C "C:\shibboleth-identity-provider-3.3.3\bin\install.bat -Didp.src.dir=C:\shibboleth-identity-provider-3.3.3 -Didp.target.dir=C:\opt\shibboleth-idp\ -Didp.merge.properties=C:\shibboleth-identity-provider-3.3.3\bin\temp.properties -Didp.sealer.password=$SSLKEYPASSWORD -Didp.keystore.password=$SSLKEYPASSWORD -Didp.conf.filemode=644 -Didp.host.name=$SITENAME -Didp.scope=$SITENAME"
 
 # Configure Shibboleth IDP
 $content = [IO.File]::ReadAllText("C:\opt\shibboleth-idp\metadata\idp-metadata.xml")
@@ -179,3 +179,15 @@ $filedata=$filedata.Replace($OriginalString,$ReplceString)
 
 cd C:\apache-tomcat-8.5.31\bin\
 Start-Process .\startup.bat
+© 2018 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+API
+Training
+Shop
+Blog
+About
