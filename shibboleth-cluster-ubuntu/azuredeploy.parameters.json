@@ -8,7 +8,7 @@
     "adminPassword": {
       "value": "GEN-PASSWORD"
     },
-    "uniqueNamePrefix": {
+    "publicDnsName": {
       "value": "GEN-UNIQUE-8"
     },
     "mySqlPasswordForRootUser": {
@@ -20,14 +20,8 @@
     "mySqlPasswordForIdpUser": {
       "value": "GEN-PASSWORD"
     },
-    "vmSizeFrontend": {
-      "value": "Standard_A0"
-    },
-    "vmSizeDB": {
-      "value": "Standard_A0"
-    },
-    "vmCountFrontend": {
-        "value": 1
+    "numberOfInstances": {
+      "value": 1
     }
   }
 }
