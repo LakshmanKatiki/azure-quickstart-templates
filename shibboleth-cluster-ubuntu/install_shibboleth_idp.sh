@@ -48,7 +48,7 @@ $client.Headers.Add([System.Net.HttpRequestHeader]::Cookie, $cookie)
 $client.DownloadFile($source,$destination)
 
 echo "Downloading tomcat8..."
-$source = "http://apache.mirrors.ionfish.org/tomcat/tomcat-8/v8.5.31/bin/apache-tomcat-8.5.31-windows-x64.zip"
+$source = "https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.31/bin/apache-tomcat-8.5.31-windows-x64.zip"
 $destination = "C:\Temp\apache-tomcat-8.5.31-windows-x64.zip"
 $client = new-object System.Net.WebClient 
 $client.DownloadFile($source,$destination)
